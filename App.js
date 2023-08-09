@@ -1,6 +1,8 @@
 import 'react-native-gesture-handler';
-import React from 'react';
-import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
+
+import React, {useEffect} from 'react';
+import {SafeAreaView, StatusBar, View, useColorScheme} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {NavigationContainer} from '@react-navigation/native';
@@ -13,6 +15,10 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
 
   return (
     <SafeAreaView style={[backgroundStyle, {flex: 1}]}>
