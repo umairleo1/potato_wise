@@ -1,13 +1,22 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-import SCREENS from 'utils/constants';
+import {createStackNavigator} from '@react-navigation/stack';
 
-export default function index() {
+import SCREENS from 'utils/constants';
+import BottomTab from '../tab-navigator';
+
+const Stack = createStackNavigator();
+const {BOTTOM_TAB} = SCREENS;
+
+export default function AppNavigator() {
   return (
-    <View>
-      <Text>{SCREENS.HOME}</Text>
-    </View>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name={BOTTOM_TAB} component={BottomTab} />
+    </Stack.Navigator>
   );
 }
 
