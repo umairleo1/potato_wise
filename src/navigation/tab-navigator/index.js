@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -9,6 +9,7 @@ import {HomeIcon, ProfileIcon} from 'assets/svg/bottom-tab';
 
 import SCREENS from 'utils/constants';
 import Home from 'screens/main/home';
+import About from 'screens/main/about';
 import colors from 'src/utils/themes/global-colors';
 
 const Tab = createBottomTabNavigator();
@@ -21,6 +22,17 @@ const HomeStack = () => {
         headerShown: false,
       }}>
       <Stack.Screen name={SCREENS.HOME} component={Home} />
+    </Stack.Navigator>
+  );
+};
+
+const AboutStack = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name={SCREENS.ABOUT} component={About} />
     </Stack.Navigator>
   );
 };
@@ -50,7 +62,7 @@ export default function BottomTab() {
       />
       <Tab.Screen
         name="About"
-        component={HomeStack}
+        component={AboutStack}
         options={{
           tabBarLabel: 'About',
           tabBarIcon: ({color, size, focused}) => (
