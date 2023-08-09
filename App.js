@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import SplashScreen from 'react-native-splash-screen';
 
 import React, {useEffect} from 'react';
-import {SafeAreaView, StatusBar, View, useColorScheme} from 'react-native';
+import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {NavigationContainer} from '@react-navigation/native';
