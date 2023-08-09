@@ -42,13 +42,11 @@ export default function BottomTab() {
 
   return (
     <Tab.Navigator
-      tabBarOptions={{
-        keyboardHidesTabBar: true,
-      }}
       screenOptions={{
         headerShown: false,
         unmountOnBlur: false,
         tabBarActiveTintColor: colors.buttonColor,
+        tabBarHideOnKeyboard: true,
       }}>
       <Tab.Screen
         name="Home"
