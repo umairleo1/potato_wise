@@ -5,7 +5,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import {useNavigation} from '@react-navigation/native';
 
-import {HomeIcon, ProfileIcon} from 'assets/svg/bottom-tab';
+import {HomeIcon, AddIcon} from 'assets/svg/bottom-tab';
 
 import SCREENS from 'utils/constants';
 import Home from 'screens/main/home';
@@ -64,7 +64,7 @@ export default function BottomTab() {
         options={{
           tabBarLabel: 'About',
           tabBarIcon: ({color, size, focused}) => (
-            <ProfileIcon color={focused ? colors.buttonColor : '#BBBBBB'} />
+            <AddIcon color={focused ? colors.buttonColor : '#BBBBBB'} />
           ),
         }}
       />
