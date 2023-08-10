@@ -1,16 +1,16 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
-import {useNavigation} from '@react-navigation/native';
 
 import {HomeIcon, AddIcon} from 'assets/svg/bottom-tab';
 
 import SCREENS from 'utils/constants';
 import Home from 'screens/main/home';
 import About from 'screens/main/about';
-import colors from 'src/utils/themes/global-colors';
+import colors from 'utils/themes/global-colors';
+import fonts from 'utils/themes/fonts';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -38,7 +38,15 @@ const AboutStack = () => {
 };
 
 export default function BottomTab() {
-  const navigation = useNavigation();
+  const CustomTabBarLabel = ({label, focused}) => {
+    const textStyle = {
+      color: focused ? colors.buttonColor : '#BBBBBB',
+      fontSize: focused ? 13 : 12,
+      fontFamily: focused ? fonts.RobotoMedium : fonts.RobotoRegular,
+    };
+
+    return <Text style={textStyle}>{label}</Text>;
+  };
 
   return (
     <Tab.Navigator
@@ -52,8 +60,10 @@ export default function BottomTab() {
         name="Home"
         component={HomeStack}
         options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({color, size, focused}) => (
+          tabBarLabel: ({focused}) => (
+            <CustomTabBarLabel label="Home" focused={focused} />
+          ),
+          tabBarIcon: ({focused}) => (
             <HomeIcon color={focused ? colors.buttonColor : '#BBBBBB'} />
           ),
         }}
@@ -62,7 +72,9 @@ export default function BottomTab() {
         name="About"
         component={AboutStack}
         options={{
-          tabBarLabel: 'About',
+          tabBarLabel: ({focused}) => (
+            <CustomTabBarLabel label="About" focused={focused} />
+          ),
           tabBarIcon: ({color, size, focused}) => (
             <AddIcon color={focused ? colors.buttonColor : '#BBBBBB'} />
           ),
