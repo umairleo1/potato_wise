@@ -15,12 +15,12 @@ const styles = StyleSheet.create({
   imgContainer: {
     height: 200,
     marginTop: 20,
-    width: '90%',
+    width: 200,
     backgroundColor: colors.whiteColor,
     alignItems: 'center',
     justifyContent: 'center',
 
-    borderRadius: 10,
+    borderRadius: 100,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

@@ -7,7 +7,8 @@ export default globalStyles = StyleSheet.create({
     backgroundColor: colors.whiteColor,
   },
   innerContainer: {
-    padding: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
     flex: 1,
   },
 });
