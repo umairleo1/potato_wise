@@ -17,7 +17,7 @@ export default function Report() {
   const route = useRoute();
   const scrollViewRef = useRef(null);
 
-  const [prediction, setPrediction] = useState('Early Blight');
+  const [prediction, setPrediction] = useState(route?.params?.result);
   const [openIndex, setOpenIndex] = useState(null);
 
   const [contentHeight, setContentHeight] = useState(0);
@@ -54,13 +54,18 @@ export default function Report() {
             // resizeMode="contain"
           />
           <Text style={[styles.text, {marginVertical: 10}]}>
-            We're highly confident that it is:
+            <Text>We're</Text>
+            <Text style={{fontFamily: fonts.Bold}}>
+              {' '}
+              {prediction?.confidence}%{' '}
+            </Text>
+            <Text>confident that it is:</Text>
           </Text>
           <Text style={[styles.heading, {marginVertical: 20}]}>
-            {prediction}
+            {prediction?.class}
           </Text>
           <Text style={styles.text}>
-            {diseaseInfo[prediction]?.description}
+            {diseaseInfo[prediction?.class]?.description}
           </Text>
           <Text style={[styles.heading, {marginVertical: 20}]}>
             Treatment Options
@@ -69,7 +74,7 @@ export default function Report() {
             title="Organic Treatment"
             leftIcon={<EntypoIcon name="leaf" size={18} color="#BBB" />}
             description={
-              diseaseInfo[prediction]?.treatments['Organic Treatment']
+              diseaseInfo[prediction?.class]?.treatments['Organic Treatment']
             }
             isOpen={openIndex === 0}
             onToggle={() => handleDropDownToggle(0)}
@@ -80,7 +85,9 @@ export default function Report() {
               <FontAwesome6Icon name="spray-can" size={18} color="#BBB" />
             }
             description={
-              diseaseInfo[prediction]?.treatments['Conventional Treatment']
+              diseaseInfo[prediction?.class]?.treatments[
+                'Conventional Treatment'
+              ]
             }
             isOpen={openIndex === 1}
             onToggle={() => handleDropDownToggle(1)}
@@ -91,7 +98,7 @@ export default function Report() {
               <FontAwesome6Icon name="biohazard" size={18} color="#BBB" />
             }
             description={
-              diseaseInfo[prediction]?.treatments['Biological Treatment']
+              diseaseInfo[prediction?.class]?.treatments['Biological Treatment']
             }
             isOpen={openIndex === 2}
             onToggle={() => handleDropDownToggle(2)}
