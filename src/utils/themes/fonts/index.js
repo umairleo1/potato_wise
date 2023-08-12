@@ -1,4 +1,8 @@
 const fonts = {
+  Regular: 'Roboto-Light',
+  Medium: 'Roboto-Medium',
+  Bold: 'Roboto-Bold',
+
   // Roboto
   RobotoBlack: 'Roboto-Black',
   RobotoBlackItalic: 'Roboto-BlackItalic',

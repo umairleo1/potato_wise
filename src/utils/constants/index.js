@@ -1,6 +1,8 @@
 export default {
   //Home
   HOME: 'HOME',
+  REPORT: 'REPORT',
+  DISEASES: 'DISEASES',
   ABOUT: 'ABOUT',
 
   //Bottom tab

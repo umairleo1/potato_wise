@@ -13,14 +13,14 @@ export default function ImageContainer({children, onPress}) {
 
 const styles = StyleSheet.create({
   imgContainer: {
-    height: 200,
+    height: 100,
     marginTop: 20,
-    width: 200,
+    width: 100,
     backgroundColor: colors.whiteColor,
     alignItems: 'center',
     justifyContent: 'center',
 
-    borderRadius: 100,
+    borderRadius: 50,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

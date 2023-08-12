@@ -14,7 +14,7 @@ export default function Header({title, back}) {
       <Text style={styles.headerText}>{title}</Text>
       {back && (
         <TouchableOpacity
-          onPress={navigations.goBack()}
+          onPress={() => navigations.goBack()}
           style={styles.backIcon}>
           <AntDesignIcon name="arrowleft" size={20} />
         </TouchableOpacity>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
 
   headerText: {
-    fontFamily: fonts.RobotoBold,
+    fontFamily: fonts.Bold,
     fontSize: 20,
     color: colors.black,
   },
