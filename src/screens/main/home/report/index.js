@@ -6,6 +6,7 @@ import {useRoute} from '@react-navigation/native';
 import globalStyles from 'utils/themes/global-styles';
 import Header from 'components/header/indes';
 import fonts from 'utils/themes/fonts';
+import images from 'assets/images/images';
 
 import diseaseInfo from 'utils/constants/disease-info/disease-info.json';
 import DropDownView from 'components/drop-down-view';
@@ -78,6 +79,7 @@ export default function Report() {
             }
             isOpen={openIndex === 0}
             onToggle={() => handleDropDownToggle(0)}
+            img={images.organic_treatment}
           />
           <DropDownView
             title="Conventional Treatment"
@@ -91,6 +93,7 @@ export default function Report() {
             }
             isOpen={openIndex === 1}
             onToggle={() => handleDropDownToggle(1)}
+            img={images.conventional_treatment}
           />
           <DropDownView
             title="Biological Treatment"
@@ -102,6 +105,7 @@ export default function Report() {
             }
             isOpen={openIndex === 2}
             onToggle={() => handleDropDownToggle(2)}
+            img={images.biological_treatment}
           />
         </View>
       </ScrollView>
