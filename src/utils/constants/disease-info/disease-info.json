@@ -19,5 +19,11 @@
       "Conventional Treatment": "Conventional treatment of late blight involves the use of chemical fungicides that target the Phytophthora infestans pathogen. Fungicides should be applied preventively and according to recommended schedules. The choice of fungicides may depend on local resistance patterns and recommendations.",
       "Biological Treatment": "Biological control methods for late blight include the use of microbial antagonists and biopesticides. These organisms can compete with the late blight pathogen for resources or produce compounds that inhibit its growth. However, biological control alone may not provide complete protection and is often used as part of an integrated disease management strategy."
     }
+  },
+  "About Us": {
+    "description": "Welcome to my Potato Disease Prediction App! I'm a data science student working on my final year project. This app predicts potato plant diseases like early blight, late blight, and healthy plants. Join me in using data science for healthier potato crops!"
+  },
+  "Disease Info": {
+    "description": " Empowering Farmers. Discover the key to safeguarding your potato crops. We're here to support farmers with valuable insights on common potato diseases and effective prevention strategies. Your crops matter to us, and we're committed to ensuring their health and vitality."
   }
 }

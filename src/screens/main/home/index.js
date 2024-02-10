@@ -70,10 +70,12 @@ export default function Home() {
       const result = await predictService.getPrediction(formData);
       console.log({result});
 
-      navigations.navigate(SCREENS.REPORT, {
-        image: selectedImage.assets[0].uri,
-        result: result,
-      });
+      result?.class !== 'Others'
+        ? navigations.navigate(SCREENS.REPORT, {
+            image: selectedImage.assets[0].uri,
+            result: result,
+          })
+        : navigations.navigate(SCREENS.NOT_FOUND);
       setVisiable(false);
     } catch (error) {
       console.log(error);
@@ -88,7 +90,7 @@ export default function Home() {
         <Header title="Potato Wise" />
         <ScrollView>
           <View style={[globalStyles.innerContainer]}>
-            <View>
+            <View style={styles.shadow}>
               {selectedImage && (
                 <TouchableOpacity
                   onPress={() => setSelectedImage(null)}
@@ -105,7 +107,7 @@ export default function Home() {
                         uri: selectedImage.assets[0].uri,
                       }
                 }
-                // resizeMode="contain"
+                // resizeMode="cover"
               />
             </View>
             <View style={styles.buttonsView}>

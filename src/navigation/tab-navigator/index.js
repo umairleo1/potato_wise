@@ -4,10 +4,12 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {HomeIcon, NotificationIcon, AddIcon} from 'assets/svg/bottom-tab';
+import {HomeIcon, NotificationIcon} from 'assets/svg/bottom-tab';
+import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
 import Home from 'screens/main/home';
 import Report from 'screens/main/home/report';
+import NotFound from 'src/screens/main/not_found';
 import Diseases from 'src/screens/main/diseases';
 import About from 'screens/main/about';
 
@@ -26,6 +28,7 @@ const HomeStack = () => {
       }}>
       <Stack.Screen name={SCREENS.HOME} component={Home} />
       <Stack.Screen name={SCREENS.REPORT} component={Report} />
+      <Stack.Screen name={SCREENS.NOT_FOUND} component={NotFound} />
     </Stack.Navigator>
   );
 };
@@ -95,6 +98,7 @@ export default function BottomTab() {
               color={focused ? colors.buttonColor : '#BBBBBB'}
             />
           ),
+          unmountOnBlur: true,
         }}
       />
       <Tab.Screen
@@ -105,7 +109,11 @@ export default function BottomTab() {
             <CustomTabBarLabel label="About" focused={focused} />
           ),
           tabBarIcon: ({color, size, focused}) => (
-            <AddIcon color={focused ? colors.buttonColor : '#BBBBBB'} />
+            <AntDesignIcon
+              name="infocirlceo"
+              size={18}
+              color={focused ? colors.buttonColor : '#BBBBBB'}
+            />
           ),
         }}
       />
